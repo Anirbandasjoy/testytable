@@ -30,16 +30,16 @@ const Menu = () => {
     <div>
       <ScrollRestoration />
       <Navber />
-      <div className="max-w-6xl mx-auto my-10">
+      <div className="max-w-6xl mx-auto my-10 px-4 sm:px-6 lg:px-8">
         <h1 className="text-3xl font-bold text-center mb-6">Our Menu</h1>
-        <p className="text-lg mb-6">
+        <p className="text-lg mb-6 text-center">
           Our menu is a reflection of our passion for culinary excellence. From
           classic dishes to modern creations, each item is crafted with the
           finest ingredients and utmost care.
         </p>
-        <div className="flex items-center gap-3 mb-4">
+        <div className="flex justify-center mb-4">
           <select
-            className="select select-primary w-full max-w-[250px]"
+            className="select select-primary w-full max-w-xs"
             onChange={handleChange}
           >
             <option value="default">Default</option>
@@ -47,23 +47,27 @@ const Menu = () => {
             <option value="hightolow">High to Low</option>
           </select>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {menuData.map((menu) => (
-            <div className="card bg-base-100  shadow-xl" key={menu.id}>
+            <div className="card bg-base-100 shadow-xl" key={menu.id}>
               <figure>
-                <img className="h-[250px]" src={menu.menuImage} alt="Shoes" />
+                <img
+                  className="h-64 w-full object-cover"
+                  src={menu.menuImage}
+                  alt={menu.menuName}
+                />
               </figure>
               <div className="card-body relative">
                 <h2 className="card-title text-lg">
                   {menu.menuName}
                   <div className="badge badge-secondary absolute right-2 top-2">
-                    {menu?.price}BDT
+                    {menu?.price} BDT
                   </div>
                 </h2>
                 <p>{menu.menuDescription}</p>
                 <div className="card-actions justify-end">
-                  <button className="bg-green-600 text-white p-3 w-24">
-                    order
+                  <button className="bg-green-600 text-white p-3 w-full sm:w-24">
+                    Order
                   </button>
                 </div>
               </div>
