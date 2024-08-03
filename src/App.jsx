@@ -1,6 +1,6 @@
 import Banner from "./components/Banner";
 import Footer from "./components/Footer";
-import Menu from "./components/Menu";
+import HomeMenu from "./components/HomeMenu";
 import Navber from "./components/Navber";
 
 const App = () => {
@@ -8,7 +8,7 @@ const App = () => {
     <div>
       <Navber />
       <Banner />
-      <Menu />
+      <HomeMenu />
       <Footer />
     </div>
   );
